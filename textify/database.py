@@ -11,7 +11,8 @@ def setupDatabase():
     
 def Set(id , data):
     collection = db['users-data']
-    data_uid = collection.insert_one(data).inserted_id
+    final_data = dict(user =id , **data)
+    data_uid = collection.insert_one(final_data).inserted_id
     return 500
 
 def GetAll(id):
