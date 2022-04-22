@@ -1,7 +1,7 @@
 from flask import Flask , jsonify , request , Response
 from uuid import uuid1
 import time
-from server import database
+from textify import database
 
 app = Flask(__name__)
 database.setupDatabase()
