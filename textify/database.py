@@ -19,6 +19,6 @@ def getUserData(id):
     documents = list()
     cursor = collection.find({'id' : id })
     for i in cursor:
-        documents.append(cursor)
+        documents.append(i)
     return 200 , documents
 
