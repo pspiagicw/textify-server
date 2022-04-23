@@ -11,15 +11,14 @@ def setupDatabase():
     
 def addUserData(id , data):
     collection = db['users-data']
-    final_data = dict(uid =id , **data)
-    data_uid = collection.insert_one(final_data).inserted_id
-    return 500
+    data_uid = collection.insert_one(data).inserted_id
+    return 200
 
 def getUserData(id):
     collection = db['users-data']
     documents = list()
-    cursor = collection.find({'uid' : id })
+    cursor = collection.find({'id' : id })
     for i in cursor:
         documents.append(cursor)
-    return 500 , documents
+    return 200 , documents
 
