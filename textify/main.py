@@ -17,7 +17,7 @@ def newlogin():
 @app.route('/pull/<id>' , methods=['GET'])
 def getdata(id):
     status , data = database.getUserData(id)
-    return jsonify(data) , status
+    return data , status
 
 @app.route('/push/<id>' , methods=['POST'])
 def setdata(id):

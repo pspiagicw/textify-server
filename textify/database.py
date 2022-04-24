@@ -21,5 +21,6 @@ def getUserData(id):
     cursor = collection.find({'id' : id })
     list_cur = list(cursor)
     json_data = dumps(list_cur)
+    print(json_data)
     return 200 , json_data
 
