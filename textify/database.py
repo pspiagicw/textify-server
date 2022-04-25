@@ -18,7 +18,7 @@ def addUserData(id , data):
 def getUserData(id):
     collection = db['users-data']
     documents = list()
-    cursor = collection.find({'id' : id })
+    cursor = collection.find({'uid' : id })
     list_cur = list(cursor)
     json_data = dumps(list_cur)
     print(json_data)
